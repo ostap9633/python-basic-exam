@@ -9,9 +9,30 @@
 - цикли
 - функції
 """
+from itertools import count
 
 
 def analyze_numbers(numbers: list[int]) -> dict:
+    new_dict = {}
+    count = 0
+    sum = 0
+    even = 0
+    odd = 0
+
+    for i in numbers:
+        count = count + 1
+        sum = sum + i
+        if(i % 2 == 0):
+            even = even + 1
+        else:
+            odd = odd + 1
+    new_dict['count'] = count
+    new_dict['sum'] = sum
+    new_dict['even'] = even
+    new_dict['odd'] = odd
+    return new_dict
+
+
     """
     Потрібно проаналізувати список чисел і повернути словник зі статистикою.
 

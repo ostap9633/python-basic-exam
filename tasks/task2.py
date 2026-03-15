@@ -12,11 +12,25 @@
 
 
 def parse_numbers(text: str) -> list[int]:
+
+    MY_list = text.split(",")
+    new_list = []
+    for i in MY_list:
+        i = i.strip(' ')
+        try:
+            i = int(i)
+            new_list.append(i)
+        except ValueError:
+            print("Символ не є числом")
+
+    return new_list
+
+
     """
     Потрібно перетворити рядок з числами, розділеними комами,
     у список цілих чисел.
 
-    Вимоги:
+    Вимоги: 
     - Розділити рядок по комі.
     - Прибрати зайві пробіли навколо кожного елемента.
     - Ігнорувати пусті частини (наприклад між двома комами).
@@ -65,7 +79,7 @@ if __name__ == "__main__":
     
     passed = 0
     failed = 0
-    
+
     for text, expected, description in tests:
         print(f"Running test: {description}")
         print(f"  Input: '{text}'")

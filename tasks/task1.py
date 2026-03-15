@@ -12,6 +12,17 @@
 
 
 def sum_until_negative(numbers: list[int]) -> int:
+
+    total = 0
+
+    for i in numbers:
+        if(i >= 0):
+            total = total + i
+        else:
+            return total
+    return total
+
+
     """
     Потрібно порахувати суму чисел у списку ДО першого від’ємного числа.
 
